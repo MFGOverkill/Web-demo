@@ -3,123 +3,102 @@
     <head>
         <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script>
-            /*AFRAME.registerComponent('exact-scale-box',{
-                schema: {
-                    maxWidth: { type: 'number', default: 1.0},
-                    maxHeight: { type: 'number', default: 1.0},
-                    maxDepth: { type: 'number', default: 1.0}
-                },
-                init: function() {
-                    this.el.addEventListener('model-loaded', () => {
-                        const mesh = this.el.getObject3D('mesh');
-                        if(!mesh) return;
-
-                        // 1. Bounding Box aus dem Three.js Mesh berechnen
-                        const box = new THREE.Box3().setFromObject(mesh);
-
-                        // 2. Die aktuellen realen Maße (Größe) auslesen
-                        const size = new THREE.Vector3();
-                        box.getSize(size);
-
-                        // 3. Skalierungsfaktor für jede einzelne Achse berechnen
-                        const scaleX = this.data.maxWidth / size.x;
-                        const scaleY = this.data.maxHeight / size.y;
-                        const scaleZ = this.data.maxDepth / size.z;
-
-                        // 4. Den kleinsten Faktor wählen, um proportionale Skalierung zu garantieren (keine Verzerrung!)
-                        const uniformScaleFactor = Math.min(scaleX, scaleY, scaleZ);
-
-                        // 5. Skalierung direkt auf das Three.js Objekt anwenden
-                        this.el.object3D.scale.set(uniformScaleFactor, uniformScaleFactor, uniformScaleFactor);
-
-                        console.log(`Modell skaliert. Original-Maße: X=${size.x.toFixed(2)}, Y=${size.y.toFixed(2)}, Z=${size.z.toFixed(2)}`);
-                        console.log(`Angewendeter Skalierungsfaktor: ${uniformScaleFactor.toFixed(4)}`);
-                    });
-                }
-            });*/
-        </script>
     </head>
     <body style="margin:0px; overflow: hidden;">
-        <a-scene embedded arjs="sourceType: webcam; renderer=logarithmicDepthBuffer: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3_HAMMING63 ; debugUIEnabled: false;"vr-mode-ui="enabled: false">
+        <a-scene embedded arjs="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3_HAMMING63 ; debugUIEnabled: false;"vr-mode-ui="enabled: false">
             
             
             <a-assets>
-                <a-asset-item id= "asset-obj1" src="Images/Part Studio 1.obj"></a-assets-item>
-                <a-asset-item id= "asset-mtl1" src="Images/Part Studio 1.mtl"></a-assets-item>
-                <a-asset-item id= "asset-obj2" src="Images/Part Studio 2.obj"></a-assets-item>
-                <a-asset-item id= "asset-mtl2" src="Images/Part Studio 2.mtl"></a-assets-item>
-                <a-asset-item id= "asset-obj3" src="Images/Part Studio 3.obj"></a-assets-item>
-                <a-asset-item id= "asset-mtl3" src="Images/Part Studio 3.mtl"></a-assets-item>
-                
-                <a-asset-item id= "asset-gltf1" src="Images/PartStudio 1.gltf"></a-assets-item>
+                <a-asset-item id= "asset-objwerk" src="Images/active/Werkbank.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtlwerk" src="Images/active/Werkbank.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objwarndreh" src="Images/active/Warnung Drehbank komplett(gelb).obj"></a-assets-item>
+                <a-asset-item id= "asset-mtlwarndreh" src="Images/active/Warnung Drehbank komplett(gelb).mtl"></a-assets-item>
+                <a-asset-item id= "asset-objwarnbohr" src="Images/active/Warnung Standbohrer.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtlwarnbohr" src="Images/active/Warnung Standbohrer.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objnotrufnr" src="Images/active/NotrufNummer.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtlnotrufnr" src="Images/active/NotrufNummer.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objabw" src="Images/active/Abwesenheit.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtlabw" src="Images/active/Abwesenheit.mtl"></a-assets-item>
             </a-assets>
-            
-            <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
-                <a-entity gltf-model="#asset-glft1" exact-scale-box="maxWidth: 0.5; maxHeight: 01; maxDepth: 0.3" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" ></a-enity>
-            </a-marker>
 
-            <!--<a-marker type="pattern" url="Patterns/pattern-Marker_1.patt">
-                <a-entity obj-model="obj: #asset-obj1; mtl: #asset-mtl1" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" >
-            </a-marker> -->
             
-            <!--<a-marker type="pattern" url="Patterns/pattern-kanji.patt">
-                <a-entity obj-model="obj: #asset-obj2; mtl: #asset-mtl2" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" >
-            </a-marker> -->
+            <a-marker type="pattern" url="Patterns/pattern-hiro.patt">
+                <a-entity obj-model="obj: #asset-objwerk; mtl: #asset-mtlwerk" position="0 0.1 0" scale="11 11 11" rotation="-90 0 0" >
+            </a-marker>
+            
+            <a-marker type="pattern" url="Patterns/pattern-letterA.patt">
+                <a-entity obj-model="obj: #asset-objwarndreh; mtl: #asset-mtlwarndreh" position="-1 0.1 -1" scale="1 1 1" rotation="-90 0 0" ></a-entity>
+            </a-marker>
 
             <a-marker type="pattern" url="Patterns/pattern-Marker_1.patt">
-                <a-entity obj-model="obj: #asset-obj3; mtl: #asset-mtl3" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" ></a-enity>
+                <a-entity obj-model="obj: #asset-objwarnbohr; mtl: #asset-mtlwarnbohr" position="-1 0.1 -1" scale="1 1 1" rotation="-90 0 0" ></a-entity>
             </a-marker>
 
-            <!--<a-marker type="pattern" url="Patterns/pattern-Marker_1.patt">
-                <a-plane class="imagePlane" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" material="shader:flat; scale: 2 2 2; src:Images/2497968_13416.svg">
-                    
-                </a-plane>
-            </a-marker> -->
-            
             <a-marker type="pattern" url="Patterns/pattern-Marker_2.2.patt">
-                <a-plane class="imagePlane" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" material="shader:flat; scale: 0.5 0.5 0.5; src:Images/2a98d96e-c325-41a2-8167-0b7fd220de57.jpg">
-                    
-                </a-plane>
+                <a-entity obj-model="obj: #asset-objnotrufnr; mtl: #asset-mtlnotrufnr" position="-1 0.1 -1.5" rotation="-90 0 0" scale="2 2 2">
             </a-marker>
 
-            <a-marker type="pattern" url="Patterns/pattern-Marker_3.patt">
-                <a-plane class="imagePlane" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" material="shader:flat; scale: 2 2 2; src:Images/Seamless-Circuit-Board-Pattern.svg">
-                    
-                </a-plane>
-            </a-marker>
-            <!--
             <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
-                <a-plane class="imagePlane" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" material="shader:flat; scale: 2 2 2; src:Images/Toyota.png">
-                    
-                </a-plane>
+                <a-entity obj-model="obj: #asset-objabw; mtl: #asset-mtlabw" position="-1.2.5 0.1 -1" rotation="-90 0 0" scale="1 1 1">
             </a-marker>
+            
+
+            <!--Erkenntnisse: 
+                3D modelle müssen <a-entity> sein
+                nur obj+mtl funktioniert
+                alle 3 custom Pattern funktionieren
+                asset-obj3+asset-mtl3 funktionieren nicht
+                <a-obj-model> und <a-gltf-model> funktionieren nicht
+                height und width haben keinen Einfluss auf 3D modelle
+                Scale funktioniert für 3D-Modelle
             -->
-            <a-marker type="pattern" url="Patterns/pattern-letterA.patt">
-                <a-plane class="imagePlane" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" material="shader:flat; scale: 2 2 2; src:Images/il_fullxfull.7205019422_rd27.webp">
-                    
-                </a-plane>
-            </a-marker>
 
-            <a-marker type="pattern" url="Patterns/pattern-qr-code.patt">
-                <a-plane class="imagePlane" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" material="shader:flat; scale: 2 2 2; src:Images/Toyota_Aygo_vs_Baum.jpg">
-                    
-                </a-plane>
-            </a-marker>
+            <!--//FUNKTIONIERT// 
             
-            
-            
+                <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
+                    <a-entity obj-model="obj: #asset-obj2; mtl: #asset-mtl2" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" scale: 2 2 2; >
+                </a-marker>
+                
+                <a-marker type="pattern" url="Patterns/pattern-Marker_1.patt">
+                    <a-entity obj-model="obj: #asset-obj1; mtl: #asset-mtl1" position="0.5 1 0" rotation="-90 0 0" width="4" height="5.66" scale="4 2 2" >
+                </a-marker>
 
-            <!-- // barcode funktioniert noch nicht
-            <a-marker type="barcode" value="1">
-                <a-plane class="imagePlane" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" material="shader:flat; scale: 2 2 2; src:Images/Toyota_Aygo_vs_Baum.jpg">
-                    
-                </a-plane>
-                -->
-            </a-marker>
+                <a-marker type="pattern" url="Patterns/pattern-Marker_2.2.patt">
+                    <a-entity obj-model="obj: #asset-obj1; mtl: #asset-mtl1" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" >
+                </a-marker> 
 
+                <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
+                    <a-entity obj-model="obj: #asset-obj2; mtl: #asset-mtl2" position="0 0 0" rotation="-90 0 0"  >
+                </a-marker> 
+
+            -->
+            
+            <!--//FUNKTIONIERT NICHT//
+
+                <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
+                    <a-entety glft-model="glft: #asset-glft1"  position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-entity>
+                </a-marker>
+
+                <a-marker typer="pattern" url="Patterns/pattern-kanji.patt">
+                    <a-obj-model src="#asset-obj2" mtl="#asset-mtl2" position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-obj-model>
+                </a-marker>
+
+                <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
+                    <a-entity glft-model="#asset-glft1"  position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-entity>
+                </a-marker>
+
+                <a-marker type="pattern" url="Patterns/pattern-Marker_3.patt">
+                    <a-entity obj-model="obj: #asset-obj3; mtl: #asset-mtl3" position="0 0 0" rotation="-90 0 0"  ></a-enity>
+                </a-marker>-
+
+            -->
+            
             <a-entity camera></a-entity>
         </a-scene>
         
     </body>
 </html>
+
+
+
+
