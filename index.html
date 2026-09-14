@@ -19,6 +19,10 @@
                 <a-asset-item id= "asset-mtlnotrufnr" src="Images/active/NotrufNummer.mtl"></a-assets-item>
                 <a-asset-item id= "asset-objabw" src="Images/active/Abwesenheit.obj"></a-assets-item>
                 <a-asset-item id= "asset-mtlabw" src="Images/active/Abwesenheit.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objdps1" src="Images/active/Warnhinweis Doppelschleifblock 1.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtldps1" src="Images/active/Warnhinweis Doppelschleifblock 1.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objdps2" src="Images/active/Warnhinweis Doppelschleifblock 2.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtldps2" src="Images/active/Warnhinweis Doppelschleifblock 2.mtl"></a-assets-item>
             </a-assets>
 
             
@@ -37,11 +41,15 @@
             <a-marker type="pattern" url="Patterns/pattern-Marker_2.2.patt">
                 <a-entity obj-model="obj: #asset-objnotrufnr; mtl: #asset-mtlnotrufnr" position="-1 0.1 -1.5" rotation="-90 0 0" scale="2 2 2">
             </a-marker>
-
+        <!--
             <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
                 <a-entity obj-model="obj: #asset-objabw; mtl: #asset-mtlabw" position="-1.2.5 0.1 -1" rotation="-90 0 0" scale="1 1 1">
             </a-marker>
-            
+        -->
+            <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
+                <a-entity obj-model="obj: #asset-objdps1; mtl: #asset-mtldps1" position="-3.2.5 0.1 -1" rotation="-90 0 0" scale="1 1 1">
+                <a-entity obj-model="obj: #asset-objdps2; mtl: #asset-mtldps2" position="3.2 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
+            </a-marker>
 
             <!--Erkenntnisse: 
                 3D modelle müssen <a-entity> sein
