@@ -4,4 +4,5 @@
 	->hyperlinks die einen auf eine der htmls bringen die mit AR.js funktionieren
 		->Mann kann die 3D modelle so auf mehrere htmls aufteilen
 			->Vorteile: geringere Ladezeit, wiederverwendbarkeit von Markern
+			-> Marker mit entsprechender Farbe kennzeichnen, damit man Weis Wozu er ghört, sonnst kriegt man die 				   Falschen Infos angezeigt
 	->hyperlinks die einen zur Startseite zurück bringen
