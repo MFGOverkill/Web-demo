@@ -27,6 +27,8 @@ A-Frame Webframework zum Bau von 3D/AR/VR erlebnissen:
 
 Kleine Tipps:
 
+	-> Website zum Erstellen von Markern
+		-> https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html
 	-> STRG+ALT+I öffnet den A-Frame Inspector, damit kann man herausfinden ob Marker erkannt werden
 	-> Was auch immer man in AR zeigen will ist ein child-Entity zu dem entsprechenden Marker
 	-> Die 3D modelle müssen mit <a-entity> aufgerufen werden, <a-obj-model> funktioniert nicht
