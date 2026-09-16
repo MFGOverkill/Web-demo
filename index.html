@@ -4,10 +4,12 @@
         <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     </head>
+    <!--Vorraussetzungen für das body-element-->
     <body style="margin:0px; overflow: hidden;">
+        <!--componenten die Ar.js beienflussen-->
         <a-scene embedded arjs="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3_HAMMING63 ; debugUIEnabled: false;"vr-mode-ui="enabled: false">
             
-            
+            <!--Hier werden die 3D-Modelle geladen, bevor die Webseite die Kamera öffnet-->
             <a-assets>
                 <a-asset-item id= "asset-objwerk" src="Images/active/Werkbank.obj"></a-assets-item>
                 <a-asset-item id= "asset-mtlwerk" src="Images/active/Werkbank.mtl"></a-assets-item>
@@ -26,15 +28,15 @@
             </a-assets>
 
             
-            <a-marker type="pattern" url="Patterns/pattern-hiro.patt">
+            <a-marker type="pattern" url="Patterns/pattern-Marker_1.patt">
                 <a-entity obj-model="obj: #asset-objwerk; mtl: #asset-mtlwerk" position="0 0.1 0" scale="11 11 11" rotation="-90 0 0" >
             </a-marker>
-            
+        
             <a-marker type="pattern" url="Patterns/pattern-letterA.patt">
                 <a-entity obj-model="obj: #asset-objwarndreh; mtl: #asset-mtlwarndreh" position="-1 0.1 -1" scale="1 1 1" rotation="-90 0 0" ></a-entity>
             </a-marker>
-
-            <a-marker type="pattern" url="Patterns/pattern-Marker_1.patt">
+        
+            <a-marker type="pattern" url="Patterns/pattern-hiro.patt">
                 <a-entity obj-model="obj: #asset-objwarnbohr; mtl: #asset-mtlwarnbohr" position="-1 0.1 -1" scale="1 1 1" rotation="-90 0 0" ></a-entity>
             </a-marker>
 
@@ -47,11 +49,10 @@
                 <a-entity obj-model="obj: #asset-objdps2; mtl: #asset-mtldps2" position="3.2 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
             </a-marker>
 
-        <!--
-            <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
+            <a-marker type="pattern" url="Patterns/pattern-Marker_3.patt">
                 <a-entity obj-model="obj: #asset-objabw; mtl: #asset-mtlabw" position="-1.2.5 0.1 -1" rotation="-90 0 0" scale="1 1 1">
             </a-marker>
-        -->
+
             <!--Erkenntnisse: 
                 3D modelle müssen <a-entity> sein
                 nur obj+mtl funktioniert
@@ -62,46 +63,7 @@
                 Scale funktioniert für 3D-Modelle
             -->
 
-            <!--//FUNKTIONIERT// huh?
-            
-                <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
-                    <a-entity obj-model="obj: #asset-obj2; mtl: #asset-mtl2" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" scale: 2 2 2; >
-                </a-marker>
-                
-                <a-marker type="pattern" url="Patterns/pattern-Marker_1.patt">
-                    <a-entity obj-model="obj: #asset-obj1; mtl: #asset-mtl1" position="0.5 1 0" rotation="-90 0 0" width="4" height="5.66" scale="4 2 2" >
-                </a-marker>
-
-                <a-marker type="pattern" url="Patterns/pattern-Marker_2.2.patt">
-                    <a-entity obj-model="obj: #asset-obj1; mtl: #asset-mtl1" position="0 0 0" rotation="-90 0 0" width="4" height="5.66" >
-                </a-marker> 
-
-                <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
-                    <a-entity obj-model="obj: #asset-obj2; mtl: #asset-mtl2" position="0 0 0" rotation="-90 0 0"  >
-                </a-marker> 
-
-            -->
-            
-            <!--//FUNKTIONIERT NICHT//
-
-                <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
-                    <a-entety glft-model="glft: #asset-glft1"  position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-entity>
-                </a-marker>
-
-                <a-marker typer="pattern" url="Patterns/pattern-kanji.patt">
-                    <a-obj-model src="#asset-obj2" mtl="#asset-mtl2" position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-obj-model>
-                </a-marker>
-
-                <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
-                    <a-entity glft-model="#asset-glft1"  position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-entity>
-                </a-marker>
-
-                <a-marker type="pattern" url="Patterns/pattern-Marker_3.patt">
-                    <a-entity obj-model="obj: #asset-obj3; mtl: #asset-mtl3" position="0 0 0" rotation="-90 0 0"  ></a-enity>
-                </a-marker>-
-
-            -->
-            
+            <!--Erzeugt Kamera entity-->
             <a-entity camera></a-entity>
         </a-scene>
         
