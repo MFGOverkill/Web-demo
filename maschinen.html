@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    </head>
+    <!--Vorraussetzungen für das body-element-->
+    <body style="margin:0px; overflow: hidden;">
+       
+        <!--componenten die Ar.js beienflussen-->
+        <a-scene embedded arjs="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3_HAMMING63 ; debugUIEnabled: false;"vr-mode-ui="enabled: false">
+            
+            <!--Hier werden die 3D-Modelle geladen, bevor die Webseite die Kamera öffnet-->
+            <a-assets>
+                <a-asset-item id= "asset-objwerk" src="Images/active/Werkbank.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtlwerk" src="Images/active/Werkbank.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objwarndreh" src="Images/active/Warnung Drehbank komplett.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtlwarndreh" src="Images/active/Warnung Drehbank komplett.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objwarnbohr" src="Images/active/Warnung Standbohrer.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtlwarnbohr" src="Images/active/Warnung Standbohrer.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objnotrufnr" src="Images/active/NotrufNummer.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtlnotrufnr" src="Images/active/NotrufNummer.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objabw" src="Images/active/Abwesenheit.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtlabw" src="Images/active/Abwesenheit.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objdps1" src="Images/active/Warnhinweis Doppelschleifblock 1.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtldps1" src="Images/active/Warnhinweis Doppelschleifblock 1.mtl"></a-assets-item>
+                <a-asset-item id= "asset-objdps2" src="Images/active/Warnhinweis Doppelschleifblock 2.obj"></a-assets-item>
+                <a-asset-item id= "asset-mtldps2" src="Images/active/Warnhinweis Doppelschleifblock 2.mtl"></a-assets-item>
+            </a-assets>
+
+            
+            <a-marker type="pattern" url="Patterns/pattern-Marker_1.patt">
+                <a-entity obj-model="obj: #asset-objwerk; mtl: #asset-mtlwerk" position="0 0.1 0" scale="11 11 11" rotation="-90 0 0" >
+            </a-marker>
+        
+            <a-marker type="pattern" url="Patterns/pattern-letterA.patt">
+                <a-entity obj-model="obj: #asset-objwarndreh; mtl: #asset-mtlwarndreh" position="-1 0.1 -1" scale="1 1 1" rotation="-90 0 0" ></a-entity>
+            </a-marker>
+        
+            <a-marker type="pattern" url="Patterns/pattern-hiro.patt">
+                <a-entity obj-model="obj: #asset-objwarnbohr; mtl: #asset-mtlwarnbohr" position="-1 0.1 -1" scale="1 1 1" rotation="-90 0 0" ></a-entity>
+            </a-marker>
+
+            <a-marker type="pattern" url="Patterns/pattern-Marker_2.2.patt">
+                <a-entity obj-model="obj: #asset-objnotrufnr; mtl: #asset-mtlnotrufnr" position="-1 0.1 -1.5" rotation="-90 0 0" scale="2 2 2">
+            </a-marker>
+        
+            <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
+                <a-entity obj-model="obj: #asset-objdps1; mtl: #asset-mtldps1" position="-3.2.5 0.1 -1" rotation="-90 0 0" scale="1 1 1">
+                <a-entity obj-model="obj: #asset-objdps2; mtl: #asset-mtldps2" position="3.2 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
+            </a-marker>
+
+            <a-marker type="pattern" url="Patterns/pattern-Marker_3.patt">
+                <a-entity obj-model="obj: #asset-objabw; mtl: #asset-mtlabw" position="-1.2.5 0.1 -1" rotation="-90 0 0" scale="1 1 1">
+            </a-marker>
+
+            <!--Erkenntnisse: 
+                3D modelle müssen <a-entity> sein
+                nur obj+mtl funktioniert
+                alle 3 custom Pattern funktionieren
+                asset-obj3+asset-mtl3 funktionieren nicht
+                <a-obj-model> und <a-gltf-model> funktionieren nicht
+                height und width haben keinen Einfluss auf 3D modelle
+                Scale funktioniert für 3D-Modelle
+            -->
+
+            <!--Erzeugt Kamera entity-->
+            <a-entity camera></a-entity>
+        </a-scene>
+        
+    </body>
+</html>
+
+
+
+
