@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <!--Importieren von A-Frame und AR.js-->
     <head>
         <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -12,6 +13,9 @@
             
             <!--Hier werden die 3D-Modelle geladen, bevor die Webseite die Kamera öffnet-->
             <a-assets>
+                <!--ich gebe den geladenen Objekten eine einzigartige id damit ich sie in den Markern dann mit dieser ansprechen kann.
+                src="relativer Pfad" . Wenn ihr den nen Ordner mit euren 3D Objekten schon diesem Projekt hinzugefügt habt,
+                könnt ihr mit rechtsklick auf eine Datei deren relativen Pfad mit copy relative Path kopieren(Zumindest in Visual Studio Code)-->
                 <a-asset-item id= "asset-objwerk" src="Images/active/Werkbank.obj"></a-assets-item>
                 <a-asset-item id= "asset-mtlwerk" src="Images/active/Werkbank.mtl"></a-assets-item>
                 <a-asset-item id= "asset-objwarndreh" src="Images/active/Warnung Drehbank komplett.obj"></a-assets-item>
@@ -28,8 +32,11 @@
                 <a-asset-item id= "asset-mtldps2" src="Images/active/Warnhinweis Doppelschleifblock 2.mtl"></a-assets-item>
             </a-assets>
 
-            
+            <!--type="patter" bedeutet die Kamera sucht nach einem Marker vom Typ pattern und nicht Barcode
+                in die url muss der relative Pfad zu der .patt-Datei des markers-->
             <a-marker type="pattern" url="Patterns/pattern-Marker_1.patt">
+                <!--obj-model="obj: xxxxx" in meinem Fall benutze ich die von mir gesetzte id des bereits geladenen 3D -objekts,
+                ebenso für die mtl datei-->
                 <a-entity obj-model="obj: #asset-objwerk; mtl: #asset-mtlwerk" position="0 0.1 0" scale="11 11 11" rotation="-90 0 0" >
             </a-marker>
         
