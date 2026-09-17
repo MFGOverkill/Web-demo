@@ -18,18 +18,24 @@
                 könnt ihr mit rechtsklick auf eine Datei deren relativen Pfad mit copy relative Path kopieren(Zumindest in Visual Studio Code)-->
                 <a-asset-item id= "asset-objwerk" src="Images/active/Werkbank.obj"></a-assets-item>
                 <a-asset-item id= "asset-mtlwerk" src="Images/active/Werkbank.mtl"></a-assets-item>
+
                 <a-asset-item id= "asset-objwarndreh" src="Images/active/Warnung Drehbank komplett.obj"></a-assets-item>
                 <a-asset-item id= "asset-mtlwarndreh" src="Images/active/Warnung Drehbank komplett.mtl"></a-assets-item>
+
                 <a-asset-item id= "asset-objwarnbohr" src="Images/active/Warnung Standbohrer.obj"></a-assets-item>
                 <a-asset-item id= "asset-mtlwarnbohr" src="Images/active/Warnung Standbohrer.mtl"></a-assets-item>
+
                 <a-asset-item id= "asset-objnotrufnr" src="Images/active/NotrufNummer.obj"></a-assets-item>
                 <a-asset-item id= "asset-mtlnotrufnr" src="Images/active/NotrufNummer.mtl"></a-assets-item>
+
                 <a-asset-item id= "asset-objabw" src="Images/active/Abwesenheit.obj"></a-assets-item>
                 <a-asset-item id= "asset-mtlabw" src="Images/active/Abwesenheit.mtl"></a-assets-item>
+
                 <a-asset-item id= "asset-objdps1" src="Images/active/Warnhinweis Doppelschleifblock 1.obj"></a-assets-item>
                 <a-asset-item id= "asset-mtldps1" src="Images/active/Warnhinweis Doppelschleifblock 1.mtl"></a-assets-item>
                 <a-asset-item id= "asset-objdps2" src="Images/active/Warnhinweis Doppelschleifblock 2.obj"></a-assets-item>
                 <a-asset-item id= "asset-mtldps2" src="Images/active/Warnhinweis Doppelschleifblock 2.mtl"></a-assets-item>
+
             </a-assets>
 
             <!--type="patter" bedeutet die Kamera sucht nach einem Marker vom Typ pattern und nicht Barcode
@@ -51,7 +57,8 @@
             <a-marker type="pattern" url="Patterns/pattern-Marker_2.2.patt">
                 <a-entity obj-model="obj: #asset-objnotrufnr; mtl: #asset-mtlnotrufnr" position="-1 0.1 -1.5" rotation="-90 0 0" scale="2 2 2">
             </a-marker>
-        
+            
+            <!--ich habe hier 2 3D-Modelle geladen-->
             <a-marker type="pattern" url="Patterns/pattern-kanji.patt">
                 <a-entity obj-model="obj: #asset-objdps1; mtl: #asset-mtldps1" position="-3.2.5 0.1 -1" rotation="-90 0 0" scale="1 1 1">
                 <a-entity obj-model="obj: #asset-objdps2; mtl: #asset-mtldps2" position="3.2 0 0" rotation="0 0 0" scale="1 1 1">
