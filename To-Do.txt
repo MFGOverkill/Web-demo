@@ -1,8 +1,9 @@
--Link zur github page in einen QR-Code umwandeln und testen
+-Link zur github page in einen QR-Code umwandeln und testen ✓
 -Startseite hinzufügen:
-	->Startseite mit Hinweisen zur Benutzung
-	->hyperlinks die einen auf eine der htmls bringen die mit AR.js funktionieren
+	->Startseite mit Hinweisen zur Benutzung ✓
+	->hyperlinks die einen auf eine der htmls bringen die mit AR.js funktionieren ✓
 		->Mann kann die 3D modelle so auf mehrere htmls aufteilen
 			->Vorteile: geringere Ladezeit, wiederverwendbarkeit von Markern
-			-> Marker mit entsprechender Farbe kennzeichnen, damit man Weis Wozu er ghört, sonnst kriegt man die 				   Falschen Infos angezeigt
-	->hyperlinks die einen zur Startseite zurück bringen
+			-> Marker mit entsprechender Farbe kennzeichnen, damit man Weis Wozu er gehört, sonnst kriegt man die Falschen Infos angezeigt
+	->hyperlinks die einen zur Startseite zurück bringen X
+-Englische Übersetzungen für die Texte, für ausländische Besuchergruppen
